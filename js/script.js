@@ -82,8 +82,22 @@ startBtn.addEventListener('click', () => {
     start()
 });
 restartBtn.addEventListener('click', () => {
+    userAnswers = 0;
+    clearInterval(count);
     start();
+
     resulOfQuiz.style.display = 'none';
+    countQuestion = 0;
+    questionsNumber.innerText = countQuestion + 1;
+
+    nextBtn.style.display = 'block';
+    nextBtn.innerText = '';
+    nextBtn.innerText = "Next Que";
+
+    endBtn.style.display = 'none';
+
+
+
 });
 
 function start() {
