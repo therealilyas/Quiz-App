@@ -85,7 +85,6 @@ restartBtn.addEventListener('click', () => {
     userAnswers = 0;
     clearInterval(count);
     start();
-
     resulOfQuiz.style.display = 'none';
     countQuestion = 0;
     questionsNumber.innerText = countQuestion + 1;
@@ -97,7 +96,6 @@ restartBtn.addEventListener('click', () => {
     endBtn.style.display = 'none';
 
 
-
 });
 
 function start() {
@@ -106,6 +104,8 @@ function start() {
     showQuestions(0);
     startTimer(15);
 }
+
+
 let countQuestion = 0;
 
 function showQuestions(i) {
@@ -127,6 +127,7 @@ function showQuestions(i) {
     if (questionsNumber.innerText == 5) {
         nextBtn.style.display = 'none';
         endBtn.style.display = 'block';
+
     }
 
 
@@ -183,9 +184,16 @@ function startTimer(i) {
             startTimer(15);
             return;
         }
+        if (i == 0) {
+            showResults()
+
+
+            return;
+        }
         i--;
     }
 }
+
 
 function showResults() {
     quizBox.style.display = 'none';
